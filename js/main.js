@@ -8,6 +8,7 @@ gridButtons.forEach(function changeColor(currentBox) {
     currentBox.addEventListener('click', function () {
         // In order to determine which player is playing, we can use the following logic.
         if (countClicks % 2 === 0 && buttonStyle.backgroundColor !== 'red' && buttonStyle.backgroundColor !== 'blue') {
+            console.log(countClicks % 2 === 0);
             // red player
             buttonStyle.backgroundColor = 'red';
             countClicks += 1;
@@ -33,21 +34,36 @@ function pickWinner() {
      */
     if (gridButtons[0].style.backgroundColor === gridButtons[1].style.backgroundColor && gridButtons[1].style.backgroundColor === gridButtons[2].style.backgroundColor && gridButtons[0].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[0].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[3].style.backgroundColor === gridButtons[4].style.backgroundColor && gridButtons[4].style.backgroundColor === gridButtons[5].style.backgroundColor && gridButtons[3].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[3].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[6].style.backgroundColor === gridButtons[7].style.backgroundColor && gridButtons[7].style.backgroundColor === gridButtons[8].style.backgroundColor && gridButtons[6].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[6].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[0].style.backgroundColor === gridButtons[3].style.backgroundColor && gridButtons[3].style.backgroundColor === gridButtons[6].style.backgroundColor && gridButtons[0].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[0].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[1].style.backgroundColor === gridButtons[4].style.backgroundColor && gridButtons[4].style.backgroundColor === gridButtons[7].style.backgroundColor && gridButtons[1].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[1].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[2].style.backgroundColor === gridButtons[5].style.backgroundColor && gridButtons[5].style.backgroundColor === gridButtons[8].style.backgroundColor && gridButtons[2].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[2].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[0].style.backgroundColor === gridButtons[4].style.backgroundColor && gridButtons[4].style.backgroundColor === gridButtons[8].style.backgroundColor && gridButtons[0].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[0].style.backgroundColor} player won the game`;
+        reloadGame();
     } else if (gridButtons[2].style.backgroundColor === gridButtons[4].style.backgroundColor && gridButtons[4].style.backgroundColor === gridButtons[6].style.backgroundColor && gridButtons[2].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[2].style.backgroundColor} player won the game!`;
+        reloadGame();
     } else if (countClicks === 9) {
         winMessageDiv.innerHTML = `You both lose!`;
+        reloadGame();
     }
+}
+
+function reloadGame() {
+    setTimeout(function () {
+        window.location.reload();
+    }, 2000);
 }
