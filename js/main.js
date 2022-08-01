@@ -2,7 +2,7 @@ gridButtons = document.querySelectorAll("a");   // get all the grid buttons
 winMessageDiv = document.querySelector("#message"); // get win message div
 let countClicks = 0;
 
-// attach click event for each button
+// attach click event for each a href
 gridButtons.forEach(function changeColor(currentBox) {
     let buttonStyle = currentBox.style;
     currentBox.addEventListener('click', function () {
