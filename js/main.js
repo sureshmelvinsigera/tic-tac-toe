@@ -1,5 +1,4 @@
 gridButtons = document.querySelectorAll("a");   // get all the grid buttons
-btnRest = document.querySelector("#resetButton")    // get rest button
 winMessageDiv = document.querySelector("#message"); // get win message div
 let countClicks = 0;
 
