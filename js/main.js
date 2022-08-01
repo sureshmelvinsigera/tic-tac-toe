@@ -16,7 +16,7 @@ gridButtons.forEach(function changeColor(currentBox) {
             buttonStyle.backgroundColor = 'blue';
             countClicks += 1;
         }
-        // Verify your sanity
+        // verify your sanity
         // console.log(countClicks);
         pickWinner();
     })
@@ -25,6 +25,11 @@ gridButtons.forEach(function changeColor(currentBox) {
 function pickWinner() {
     /**
      * Algorithm to detect game winner
+     */
+    /*
+     [0, 1, 2]
+     [3, 4, 5]
+     [6, 7, 8]
      */
     if (gridButtons[0].style.backgroundColor === gridButtons[1].style.backgroundColor && gridButtons[1].style.backgroundColor === gridButtons[2].style.backgroundColor && gridButtons[0].style.backgroundColor !== "") {
         winMessageDiv.innerHTML = `${gridButtons[0].style.backgroundColor} player won the game`;
